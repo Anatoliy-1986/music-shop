@@ -1,0 +1,164 @@
+@import "/styles/breakpoints";
+
+.root {
+  width: 100%;
+  margin-top: -100px;
+  padding-top: 100px;
+  padding-bottom: 103px;
+  background: var(--primary-bg);
+  z-index: -1;
+
+  @include media("<=md") {
+    padding-bottom: 0;
+  }
+}
+
+.contentWrapper {
+  max-width: 1619px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  @include media("<=xl") {
+    justify-content: center;
+    padding-top: 20px;
+    margin: 0;
+  }
+
+  @include media("<=md") {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @include media("<=sm") {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notesImage {
+  @include media("<=xl") {
+    display: none;
+  }
+}
+
+.headphones {
+  position: absolute;
+  left: 166px;
+  bottom: 0;
+  width: 570px;
+  height: 583px;
+
+  @include media("<=xl") {
+    position: relative;
+    width: 450px;
+    height: 455px;
+    left: 0;
+  }
+
+  @include media("<=sm") {
+    width: 350px;
+    height: 355px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  @include media("<=md") {
+    align-items: center;
+  }
+}
+
+.subTitle {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 99px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-top: 3px;
+  margin-bottom: 45px;
+
+  @include media("<=lg") {
+    font-size: 50px;
+  }
+
+  @include media("<=md") {
+    text-align: center;
+  }
+}
+
+.priceWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.price {
+  position: relative;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 130%;
+  color: var(--white);
+  margin-right: 60px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--white);
+  }
+
+  @include media("<=lg") {
+    font-size: 35px;
+  }
+}
+
+.oldPrice {
+  font-weight: 500;
+  font-size: 31px;
+  line-height: 140%;
+  text-decoration-line: line-through;
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.buyButton {
+  padding: 15px 46px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--pink);
+  transition: all 0.3s linear;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 0 30px #c20020;
+    }
+  }
+}
