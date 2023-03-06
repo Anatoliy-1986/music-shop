@@ -1,0 +1,104 @@
+@import "/styles/breakpoints";
+
+.root {
+  width: 100%;
+  padding-top: 34px;
+}
+
+.headerWrapper {
+  max-width: 1145px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  @include media("<=xl") {
+    padding: 0 20px;
+  }
+}
+
+.buttonWrapper {
+  position: relative;
+  display: flex;
+
+  @include media("<=sm") {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 79px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--white);
+    opacity: 0.5;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 79px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--white);
+    opacity: 0.5;
+  }
+}
+
+.headerButton {
+  width: 47px;
+  height: 47px;
+  margin-right: 64px;
+  transition: all 0.1s linear;
+
+  @media (any-hover: hover) {
+    &:hover {
+      scale: (1.1);
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.burgerBtn {
+  width: 38px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  transition: all 0.1s linear;
+
+  @media (any-hover: hover) {
+    &:hover {
+      scale: (1.1);
+    }
+  }
+}
+
+.burger {
+  position: relative;
+  border: none;
+  width: 37px;
+  height: 3px;
+  background: var(--white);
+  box-shadow: 0 -16px var(--white);
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 29px;
+    height: 3px;
+    background: var(--white);
+    box-shadow: 0 -16px var(--white);
+  }
+}

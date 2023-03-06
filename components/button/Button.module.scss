@@ -1,0 +1,10 @@
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
