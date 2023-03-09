@@ -1,6 +1,8 @@
 :root {
     --white: #ffffff;
     --pink: #ff4948;
+    --black: #000000;
+    --black-text: #180202;
 
     --primary-bg: linear-gradient(74.79deg, #ff9292 -7.33%, #de5150 90.21%);
 }

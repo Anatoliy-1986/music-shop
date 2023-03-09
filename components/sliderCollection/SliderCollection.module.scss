@@ -1,0 +1,24 @@
+@import "/styles/breakpoints";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1145px;
+  margin: 0 auto;
+  padding: 130px 0;
+
+  @include media("<xl") {
+    display: none;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--black-text);
+  margin-bottom: 70px;
+}
