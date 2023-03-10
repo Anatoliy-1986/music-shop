@@ -5,6 +5,12 @@
     --red-light: #f68080;
     --black: #000000;
     --black-text: #180202;
+    --pink-bg: #ffe6ee;
+    --pink-light-bg: #ffe5ee;
+    --blue-bg: #E6F1FF;
+    --blue-light-bg: #E5F1FF;
+    --green-bg: #E6FFFB;
+    --green-light-bg: #E5FFFB;
 
     --primary-bg: linear-gradient(74.79deg, #ff9292 -7.33%, #de5150 90.21%);
 }
