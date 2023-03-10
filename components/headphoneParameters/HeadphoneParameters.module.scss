@@ -1,0 +1,224 @@
+@import "/styles/breakpoints";
+
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1145px;
+  padding: 130px 0;
+  margin: 0 auto;
+
+  @include media("<xl") {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @include media("<sm") {
+    grid-template-rows: 1fr auto;
+  }
+}
+
+.contentWrapper {
+  @include media("<xl") {
+    justify-content: center;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 130%;
+  color: var(--black-text);
+  margin-bottom: 60px;
+
+  @include media("<xl") {
+    text-align: center;
+  }
+
+  @include media("<sm") {
+    font-size: 35px;
+  }
+}
+
+.wrapperParameters {
+  display: flex;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media("<xl") {
+    justify-content: center;
+  }
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 69px;
+  height: 69px;
+  border-radius: 100px;
+  border: 2px solid var(--pink-light);
+  position: relative;
+  margin: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    width: 98px;
+    height: 98px;
+    z-index: 0;
+    border-radius: 100px;
+    border-bottom: 7px solid var(--pink);
+    border-right: 7px solid transparent;
+    border-left: 7px solid var(--pink);
+    border-top: 7px solid transparent;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -22px;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    opacity: 0.5;
+    border-radius: 100px;
+    border-bottom: 5px solid var(--red-light);
+    border-right: 5px solid transparent;
+    border-left: 5px solid var(--red-light);
+    border-top: 5px solid transparent;
+    transform: rotate(135deg);
+  }
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  justify-content: center;
+}
+
+.subTitle {
+  font-weight: 500;
+  font-size: 31px;
+  line-height: 140%;
+  color: var(--black-text);
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--black-text);
+  opacity: 0.7;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--pink);
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  justify-self: start;
+
+  @include media("<xl") {
+    justify-self: center;
+  }
+
+  @include media("<sm") {
+    scale: (0.7);
+  }
+}
+
+.sound_left {
+  position: absolute;
+  left: -100px;
+  bottom: -100px;
+  transform: rotate(135deg);
+  animation-duration: 1s;
+  animation-name: soundMoveLeft;
+  animation-iteration-count: infinite;
+  transition: transform 0.5s linear;
+}
+
+@keyframes soundMoveLeft {
+  0% {
+    left: -100px;
+    bottom: -100px;
+  }
+
+  80% {
+    left: -115px;
+    bottom: -115px;
+  }
+
+  100% {
+    left: -100px;
+    bottom: -100px;
+  }
+}
+
+.sound_right {
+  position: absolute;
+  right: -150px;
+  bottom: -30px;
+  transform: rotate(15deg);
+  animation-duration: 1s;
+  animation-name: soundMoveRight;
+  animation-iteration-count: infinite;
+  transition: transform 0.5s linear;
+}
+
+@keyframes soundMoveRight {
+  0% {
+    right: -150px;
+    bottom: -30px;
+  }
+
+  80% {
+    right: -165px;
+    bottom: -45px;
+  }
+
+  100% {
+    right: -150px;
+    bottom: -30px;
+  }
+}
+
+.notes {
+  position: absolute;
+  left: 136px;
+  z-index: -1;
+  animation-duration: 3s;
+  animation-name: moveToTop;
+  animation-iteration-count: infinite;
+  transform: translateY(-10%);
+  transition: transform 0.5s linear;
+}
+
+@keyframes moveToTop {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translateY(-20%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+}

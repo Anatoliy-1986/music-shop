@@ -7,7 +7,7 @@
   justify-content: center;
   max-width: 1145px;
   margin: 0 auto;
-  padding: 130px 0;
+  padding-top: 130px;
 
   @include media("<xl") {
     display: none;
