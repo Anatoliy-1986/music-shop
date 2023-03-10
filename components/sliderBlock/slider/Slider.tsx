@@ -6,7 +6,7 @@ import { collection } from "../sliderCollection";
 import { useSlider } from "./useSlider";
 
 export const Slider = () => {
-  const { previousSlide, nextSlide, slideName, slide } = useSlider(
+  const { previousSlide, nextSlide, slideStatus, slide } = useSlider(
     collection.length
   );
 
@@ -17,7 +17,7 @@ export const Slider = () => {
           <div
             key={item.id}
             className={clsx(styles.imageWrapper, [
-              styles[`imageWrapper_${slideName(index)}`],
+              styles[`imageWrapper_${slideStatus(index)}`],
             ])}
           >
             <Image

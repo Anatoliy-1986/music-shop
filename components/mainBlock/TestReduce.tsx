@@ -55,14 +55,14 @@ var wizardsWithPoints = wizards.reduce(function (arr: string[], wizard) {
 
   // Если у волшебника есть очки, устанавливаем значение,
   // иначе устанавливаем 0.
-  if (points[key]) {
-    wizard.points = points[key];
-  } else {
-    wizard.points = 0;
-  }
+  // if (points[key]) {
+  //   wizard.points = points[key];
+  // } else {
+  //   wizard.points = 0;
+  // }
 
   // Добавляем объект wizard в новый массив.
-  arr.push(wizard);
+  // arr.push(wizard);
 
   // Возвращаем массив.
   return arr;
@@ -75,17 +75,17 @@ var wizardsAsAnObject = wizards.reduce(function (obj, wizard) {
 
   // Если у волшебника есть очки, устанавливаем значение,
   // иначе устанавливаем 0.
-  if (points[key]) {
-    wizard.points = points[key];
-  } else {
-    wizard.points = 0;
-  }
+  // if (points[key]) {
+  //   wizard.points = points[key];
+  // } else {
+  //   wizard.points = 0;
+  // }
 
   // Удаляем свойство name
-  delete wizard.name;
+  // delete wizard.name;
 
   // Добавляем значение wizard в новый объект
-  obj[key] = wizard;
+  // obj[key] = wizard;
 
   // Возвращаем массив
   return obj;

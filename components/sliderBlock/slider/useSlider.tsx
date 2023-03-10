@@ -17,7 +17,7 @@ export const useSlider = (arrLenght: number) => {
     setSlide(() => arrLenght - 1);
   };
 
-  const slideName = (index: number) => {
+  const slideStatus = (index: number) => {
     switch (true) {
       case index === slide:
         return "active";
@@ -30,5 +30,5 @@ export const useSlider = (arrLenght: number) => {
     }
   };
 
-  return { slide, nextSlide, previousSlide, slideName };
+  return { slide, nextSlide, previousSlide, slideStatus };
 };

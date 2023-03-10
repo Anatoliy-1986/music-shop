@@ -4,7 +4,8 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/header";
 import { MainBlock } from "@/components/mainBlock";
-import { SliderCollection } from "@/components/sliderCollection";
+import { SliderCollection } from "@/components/sliderBlock";
+import { HeadphoneParameters } from "@/components/headphoneParameters";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Header />
       <MainBlock />
       <SliderCollection />
+      <HeadphoneParameters />
     </>
   );
 }
