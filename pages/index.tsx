@@ -7,6 +7,7 @@ import { MainBlock } from "@/components/mainBlock";
 import { SliderCollection } from "@/components/sliderBlock";
 import { HeadphoneParameters } from "@/components/headphoneParameters";
 import { LatestProductBlock } from "@/components/latestProductBlock";
+import { AdvantagesBlock } from "@/components/advantagesBlock";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function Home() {
       <SliderCollection />
       <HeadphoneParameters />
       <LatestProductBlock />
+      <AdvantagesBlock />
     </>
   );
 }
