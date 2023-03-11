@@ -1,0 +1,53 @@
+@import "/styles/breakpoints";
+
+.root {
+  max-width: 1145px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 130px;
+
+  @include media("<sm") {
+    flex-direction: column;
+  }
+}
+
+.foldableHeadphones {
+  margin-right: 17px;
+
+  @include media("<xl") {
+    width: 560px;
+    height: 460px;
+  }
+
+  @include media("<lg") {
+    width: 430px;
+    height: 330px;
+  }
+
+  @include media("<md") {
+    display: none;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 130%;
+  color: var(--black);
+  margin-bottom: 28px;
+
+  @include media("<xl") {
+    font-size: 38px;
+  }
+
+  @include media("<lg") {
+    font-size: 30px;
+  }
+
+  @include media("<md") {
+    text-align: center;
+  }
+}

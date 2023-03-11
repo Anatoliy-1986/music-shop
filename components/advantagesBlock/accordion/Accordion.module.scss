@@ -1,0 +1,72 @@
+@import "/styles/breakpoints";
+
+.text {
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+  max-height: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: var(--black);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.tabWrapper {
+  position: relative;
+  overflow: hidden;
+  list-style-type: none;
+  max-width: 300px;
+
+  @include media("<md") {
+    max-width: 350px;
+  }
+}
+
+.tabWrapperOpened {
+  .arrow {
+    transform: rotate(90deg);
+  }
+
+  .text {
+    padding: 10px 20px;
+    max-height: 170px;
+    border-bottom: 1px solid var(--border-bottom);
+  }
+}
+
+.arrow {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.tabButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-bottom);
+  padding: 20px;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: rgb(249, 247, 247);
+    }
+  }
+}
+
+.textButton {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--black);
+  opacity: 0.7;
+  margin-left: 15px;
+}

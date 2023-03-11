@@ -7,7 +7,7 @@ import { latestProductList } from "./latestProductList";
 export const LatestProductBlock = () => {
   return (
     <section className={styles.root}>
-      <h1 className={styles.title}>Our Latest Product</h1>
+      <h2 className={styles.title}>Our Latest Product</h2>
       <p className={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
         facilisis nunc ipsum aliquam, ante.
