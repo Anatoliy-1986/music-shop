@@ -74,6 +74,7 @@
   border: none;
   background: transparent;
   transition: all 0.1s linear;
+  cursor: pointer;
 
   @media (any-hover: hover) {
     &:hover {

@@ -8,6 +8,7 @@ import { SliderCollection } from "@/components/sliderBlock";
 import { HeadphoneParameters } from "@/components/headphoneParameters";
 import { LatestProductBlock } from "@/components/latestProductBlock";
 import { AdvantagesBlock } from "@/components/advantagesBlock";
+import { RegForm } from "@/components/regBlock";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/images/logo.png" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Header />
       <MainBlock />
@@ -32,6 +28,7 @@ export default function Home() {
       <HeadphoneParameters />
       <LatestProductBlock />
       <AdvantagesBlock />
+      <RegForm />
     </>
   );
 }

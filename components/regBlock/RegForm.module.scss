@@ -1,0 +1,192 @@
+@import "/styles/breakpoints";
+
+.root {
+  position: relative;
+  max-width: 1145px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 130px;
+}
+
+.notes {
+  position: absolute;
+  left: 0;
+  top: -31px;
+  width: 1145;
+  height: 290;
+  z-index: -1;
+
+  @include media("<xl") {
+    display: none;
+  }
+}
+
+.formWrapper {
+  position: relative;
+  width: 712px;
+  height: 292px;
+  background: var(--pink-form-bg);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include media("<md") {
+    width: 100%;
+    margin: 0 20px;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--black-text);
+
+  @include media("<sm") {
+    font-size: 35px;
+  }
+}
+
+.subTitle {
+  width: 557px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--black-text);
+  opacity: 0.7;
+  margin-top: 6px;
+  margin-bottom: 36px;
+
+  @include media("<md") {
+    width: 350px;
+  }
+}
+
+.form {
+  position: relative;
+  background: var(--white);
+  border-radius: 73px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.form_focus {
+  box-shadow: 0 0 5px var(--red-hover);
+}
+
+.label {
+  font-size: 0;
+}
+
+.email {
+  padding: 15px 30px;
+  width: 503px;
+  border-radius: 73px;
+  border: none;
+  position: relative;
+  background: transparent;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--black-text);
+    opacity: 0.3;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+  }
+
+  @include media("<md") {
+    width: 350px;
+  }
+
+  @include media("<sm") {
+    width: 250px;
+    padding: 15px 23px;
+  }
+
+  @include media("<sl") {
+    width: 180px;
+  }
+}
+
+.error {
+  display: none;
+  position: absolute;
+  bottom: -20px;
+  left: 40px;
+  font-size: 15px;
+  line-height: 15px;
+  color: var(--red);
+  transform: translateX(0);
+}
+
+.error_active {
+  display: block;
+}
+
+.error_shaker {
+  animation-duration: 1s;
+  animation-name: shaker;
+  animation-iteration-count: 1;
+  transition: transform 0.1s linear;
+}
+
+@keyframes shaker {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-10px);
+  }
+}
+
+.regButton {
+  padding: 15px 30px;
+  background: var(--red);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.3s linear;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0 0 10px var(--red-hover);
+    }
+  }
+
+  @include media("<sl") {
+    padding: 15px;
+  }
+}

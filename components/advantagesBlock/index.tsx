@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import { Accordion } from "./accordion/Accordion";
 
 import styles from "./AdvantagesBlock.module.scss";
