@@ -2,11 +2,14 @@
     --white: #ffffff;
     --pink: #ff4948;
     --pink-light:#fdd8d8;
-    --red-light: #f68080;
-    --black: #000000;
-    --black-text: #180202;
     --pink-bg: #ffe6ee;
     --pink-light-bg: #ffe5ee;
+    --pink-form-bg: #fff4f4;
+    --red:#FF4948;
+    --red-light: #f68080;
+    --red-hover: #c20020;
+    --black: #000000;
+    --black-text: #180202;
     --blue-bg: #E6F1FF;
     --blue-light-bg: #E5F1FF;
     --green-bg: #E6FFFB;

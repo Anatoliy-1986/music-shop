@@ -14,19 +14,16 @@ export const Slider = () => {
     <div className={styles.slider}>
       {collection.map((item, index) => {
         return (
-          <div
+          <Image
             key={item.id}
             className={clsx(styles.imageWrapper, [
               styles[`imageWrapper_${slideStatus(index)}`],
             ])}
-          >
-            <Image
-              layout="fill"
-              objectFit="cover"
-              src={item.src}
-              alt={item.title || ""}
-            />
-          </div>
+            width={323}
+            height={302}
+            src={item.src}
+            alt={item.title || ""}
+          />
         );
       })}
 

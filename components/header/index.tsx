@@ -23,7 +23,7 @@ export const Header = () => {
             );
           })}
         </div>
-        <button className={styles.burgerBtn}>
+        <button className={styles.burgerBtn} aria-label="burger menu">
           <div className={styles.burger} />
         </button>
       </div>

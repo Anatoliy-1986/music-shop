@@ -158,7 +158,7 @@
 
   @media (any-hover: hover) {
     &:hover {
-      box-shadow: 0 0 30px #c20020;
+      box-shadow: 0 0 30px var(--red-hover);
     }
   }
 }
