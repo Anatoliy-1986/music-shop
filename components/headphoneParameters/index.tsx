@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { lazy } from "react";
 
 import styles from "./HeadphoneParameters.module.scss";
 import { listParameters } from "./listParameters";

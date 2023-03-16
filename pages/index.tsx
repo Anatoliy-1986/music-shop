@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import { Header } from "@/components/header";
 import { MainBlock } from "@/components/mainBlock";
 import { SliderCollection } from "@/components/sliderBlock";
@@ -9,6 +7,7 @@ import { HeadphoneParameters } from "@/components/headphoneParameters";
 import { LatestProductBlock } from "@/components/latestProductBlock";
 import { AdvantagesBlock } from "@/components/advantagesBlock";
 import { RegForm } from "@/components/regBlock";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +28,7 @@ export default function Home() {
       <LatestProductBlock />
       <AdvantagesBlock />
       <RegForm />
+      <Footer />
     </>
   );
 }
