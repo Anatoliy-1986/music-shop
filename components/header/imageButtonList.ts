@@ -6,7 +6,7 @@ export interface IButtonImage {
   alt: string;
 }
 
-export const ButtonImage = [
+export const buttonImage = [
   {
     id: 1,
     src: "/assets/images/header/search.png",

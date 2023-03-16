@@ -1,0 +1,100 @@
+@import "/styles/breakpoints";
+
+.root {
+  width: 100%;
+  background: var(--pink-footer-bg);
+  padding: 62px 0;
+}
+
+.contentWrapper {
+  max-width: 1145px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "logo links buttons";
+
+  @include media("<=xl") {
+    padding: 0 20px;
+  }
+
+  @include media("<=xl") {
+  }
+
+  @include media("<=md") {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "links links"
+      "logo buttons";
+  }
+
+  @include media("<=sm") {
+  }
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.linkWrapper {
+  grid-area: links;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media("<=lg") {
+    margin-right: 20px;
+  }
+
+  @include media("<=md") {
+    margin-right: 0;
+  }
+}
+
+.link {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--white);
+  margin-right: 31px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-bottom: 2px solid var(--white);
+    }
+  }
+}
+
+.buttonWrapper {
+  grid-area: buttons;
+  position: relative;
+  justify-content: right;
+  display: flex;
+}
+
+.socialLink {
+  margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socialButton {
+  width: 51px;
+  height: 51px;
+  transition: all 0.1s linear;
+
+  @media (any-hover: hover) {
+    &:hover {
+      scale: (1.1);
+    }
+  }
+}

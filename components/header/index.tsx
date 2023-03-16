@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "../button";
 
 import styles from "./Header.module.scss";
-import { ButtonImage, IButtonImage } from "./imageButtonList";
+import { buttonImage, IButtonImage } from "./imageButtonList";
 
 export const Header = () => {
   return (
@@ -15,7 +15,7 @@ export const Header = () => {
           alt="logo"
         />
         <div className={styles.buttonWrapper}>
-          {ButtonImage.map(({ id, src, width, height, alt }: IButtonImage) => {
+          {buttonImage.map(({ id, src, width, height, alt }: IButtonImage) => {
             return (
               <Button key={id} className={styles.headerButton}>
                 <Image src={src} width={width} height={height} alt={alt} />
