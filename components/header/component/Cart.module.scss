@@ -1,0 +1,83 @@
+@import "/styles/breakpoints";
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f2f5f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 5;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 130%;
+  text-align: center;
+  color: var(--black-text);
+  margin-bottom: 20px;
+}
+
+.itemProduct {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  background: var(--green-bg);
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.productWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--black-text);
+}
+
+.price {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--black-text);
+}
+
+.removeProduct {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.orderButton {
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  background: var(--green-bg);
+  border-radius: 10px;
+  border: 1px solid green;
+  cursor: pointer;
+  padding: 10px 20px;
+}
