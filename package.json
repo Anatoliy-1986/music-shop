@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev:server": "npx json-server db.json --port 3200",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -25,6 +26,7 @@
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "json-server": "^0.17.2",
     "sass": "^1.58.3"
   }
 }

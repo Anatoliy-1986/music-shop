@@ -10,7 +10,7 @@ import { buttonImage, IButtonImage } from "./imageButtonList";
 export const Header = () => {
   const [showCart, setShowCart] = useState(false);
 
-  const { cart } = useTypedSelector((state) => state);
+  const { cart: { list: cart } } = useTypedSelector((state) => state);
 
   const toggleCart = () => setShowCart(!showCart);
 

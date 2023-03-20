@@ -1,20 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "../product/product.type";
 
-const initialState: IProduct[] = [];
+type Props = {
+  list: IProduct[]
+}
+
+const initialState: Props = {
+  list: []};
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<IProduct>) => {
-      state.push(action.payload);
+      state.list.push(action.payload);
     },
 
     removeItem: (state, action: PayloadAction<{ id: number }>) => {
-      return state.filter((p) => {
-        p.id !== action.payload.id;
-      });
+      state.list.splice(state.list.findIndex((item) => item.id === action.payload.id), 1);
     },
   },
 });

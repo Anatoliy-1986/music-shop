@@ -12,7 +12,7 @@ export const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
   const { id, src, name, color, stars, mark, price } = product;
   const { addItem } = useActions();
 
-  const { cart } = useTypedSelector((state) => state);
+  const { cart: { list: cart } } = useTypedSelector((state) => state);
 
   const isExistsInCart = cart.some((p) => p.id === id);
   const cartButtonClassName = clsx(styles.cartButton, {
