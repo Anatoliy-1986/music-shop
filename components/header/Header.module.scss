@@ -22,10 +22,6 @@
   position: relative;
   display: flex;
 
-  @include media("<=sm") {
-    display: none;
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -47,6 +43,19 @@
     background: var(--white);
     opacity: 0.5;
   }
+
+  @include media("<=sm") {
+    position: fixed;
+    top: 110px;
+    left: 30px;
+    flex-direction: column;
+    z-index: 5;
+
+    &::after,
+    &::before {
+      content: none;
+    }
+  }
 }
 
 .headerButton {
@@ -61,9 +70,31 @@
     }
   }
 
+  @include media("<=sm") {
+    margin-bottom: 20px;
+    background: var(--pink-light);
+  }
+
   &:last-child {
     margin-right: 0;
+    margin-bottom: 0;
   }
+}
+
+.productsInCart {
+  position: absolute;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  background-color: var(--red);
 }
 
 .burgerBtn {

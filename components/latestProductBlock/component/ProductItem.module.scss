@@ -1,44 +1,5 @@
 @import "/styles/breakpoints";
 
-.root {
-  max-width: 1145px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 130px;
-}
-
-.title {
-  font-weight: 700;
-  font-size: 44px;
-  line-height: 130%;
-  text-align: center;
-  color: var(--black-text);
-
-  @include media("<sm") {
-    font-size: 35px;
-  }
-}
-
-.description {
-  width: 557px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  color: var(--black-text);
-  opacity: 0.7;
-  margin-top: 25px;
-  margin-bottom: 93px;
-
-  @include media("<md") {
-    width: 350px;
-  }
-}
-
 .cardsWrapper {
   display: flex;
   justify-content: space-between;
@@ -85,6 +46,7 @@
   height: 80px;
   border-radius: 100px;
   border: 6px solid var(--white);
+  cursor: pointer;
 }
 
 .cartButton_added {

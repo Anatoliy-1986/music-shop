@@ -5,12 +5,11 @@ import Image from "next/image";
 import styles from "./Accordion.module.scss";
 
 interface IAccordion {
-  id: number;
   text: string;
   subText: string;
 }
 
-export const Accordion = ({ id, text, subText }: IAccordion) => {
+export const Accordion = ({ text, subText }: IAccordion) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const tabWrapper = clsx(styles.tabWrapper, {
