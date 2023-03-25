@@ -8,8 +8,28 @@ import {
   footerLink,
 } from "./imageButtonList";
 import { Button } from "../button";
+import { useNavigation } from "@/hooks/useNavigation";
 
 export const Footer = () => {
+  const { handleScroll, homeRef, productsRef, aboutRef } = useNavigation();
+
+  const makeNavRef = (name: string) => {
+    switch (name) {
+      case "home":
+        return homeRef;
+      case "products":
+        return productsRef;
+      case "about":
+        return aboutRef;
+      default:
+        return homeRef;
+    }
+  };
+
+  const handleNavLinkClick = (name: string) => {
+    const makeRef = makeNavRef(name);
+    handleScroll(makeRef);
+  };
   return (
     <section className={styles.root}>
       <div className={styles.contentWrapper}>
@@ -21,9 +41,13 @@ export const Footer = () => {
           alt="logo"
         />
         <div className={styles.linkWrapper}>
-          {footerLink.map(({ id, title }: IFooterBook) => {
+          {footerLink.map(({ id, title, href = "home" }: IFooterBook) => {
             return (
-              <a key={id} className={styles.link}>
+              <a
+                key={id}
+                className={styles.link}
+                onClick={() => handleNavLinkClick(href)}
+              >
                 {title}
               </a>
             );

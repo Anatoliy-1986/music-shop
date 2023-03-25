@@ -1,3 +1,4 @@
+import { useNavigation } from "@/hooks/useNavigation";
 import { useTypedSelector } from "@/hooks/useTypedSelector";
 import Image from "next/image";
 import { useState } from "react";
@@ -9,8 +10,11 @@ import { buttonImage, IButtonImage } from "./imageButtonList";
 
 export const Header = () => {
   const [showCart, setShowCart] = useState(false);
+  const { homeRef } = useNavigation();
 
-  const { cart: { list: cart } } = useTypedSelector((state) => state);
+  const {
+    cart: { list: cart },
+  } = useTypedSelector((state) => state);
 
   const toggleCart = () => setShowCart(!showCart);
 
@@ -25,7 +29,7 @@ export const Header = () => {
     }
   };
   return (
-    <header className={styles.root}>
+    <header className={styles.root} ref={homeRef} id="home">
       <div className={styles.headerWrapper}>
         <Image
           src="/assets/images/logo.png"

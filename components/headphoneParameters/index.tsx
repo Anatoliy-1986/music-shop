@@ -1,11 +1,13 @@
 import Image from "next/image";
+import { useNavigation } from "@/hooks/useNavigation";
 
 import styles from "./HeadphoneParameters.module.scss";
 import { listParameters } from "./listParameters";
 
 export const HeadphoneParameters = () => {
+  const { aboutRef } = useNavigation();
   return (
-    <section className={styles.root}>
+    <section className={styles.root} ref={aboutRef} id="about">
       <div className={styles.contentWrapper}>
         <h2 className={styles.title}>
           Good headphones
