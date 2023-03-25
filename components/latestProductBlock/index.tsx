@@ -1,3 +1,4 @@
+import { useNavigation } from "@/hooks/useNavigation";
 import { useGetProductsQuery } from "@/store/product/product.api";
 
 import { ProductItem } from "./component/ProductItem";
@@ -5,10 +6,11 @@ import { ProductItem } from "./component/ProductItem";
 import styles from "./LatestProductBlock.module.scss";
 
 export const LatestProductBlock = () => {
+  const { productsRef } = useNavigation();
   const { data, isLoading, error } = useGetProductsQuery(3);
 
   return (
-    <section className={styles.root}>
+    <section className={styles.root} ref={productsRef} id="products">
       <h2 className={styles.title}>Our Latest Product</h2>
       <p className={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas

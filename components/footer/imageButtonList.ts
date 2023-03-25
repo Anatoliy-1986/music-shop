@@ -17,17 +17,17 @@ export const footerLink = [
   {
     id: 1,
     title: "Home",
-    href: "",
+    href: "home",
   },
   {
     id: 2,
     title: "About",
-    href: "",
+    href: "about",
   },
   {
     id: 3,
     title: "Product",
-    href: "",
+    href: "products",
   },
 ];
 
