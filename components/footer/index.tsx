@@ -9,27 +9,11 @@ import {
 } from "./imageButtonList";
 import { Button } from "../button";
 import { useNavigation } from "@/hooks/useNavigation";
+import { useNavLinks } from "@/hooks/useNavLinks";
 
 export const Footer = () => {
-  const { handleScroll, homeRef, productsRef, aboutRef } = useNavigation();
+  const { handleNavLinkClick } = useNavLinks();
 
-  const makeNavRef = (name: string) => {
-    switch (name) {
-      case "home":
-        return homeRef;
-      case "products":
-        return productsRef;
-      case "about":
-        return aboutRef;
-      default:
-        return homeRef;
-    }
-  };
-
-  const handleNavLinkClick = (name: string) => {
-    const makeRef = makeNavRef(name);
-    handleScroll(makeRef);
-  };
   return (
     <section className={styles.root}>
       <div className={styles.contentWrapper}>

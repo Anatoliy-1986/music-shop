@@ -5,13 +5,28 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #f2f5f9;
+  background-color: var(--gray-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   z-index: 5;
+  animation-duration: 1s;
+  animation-name: showCart;
+  animation-iteration-count: 1;
+  transform: translateY(0);
+  transition: transform 0.5s linear;
+}
+
+@keyframes showCart {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .title {
@@ -55,6 +70,10 @@
   font-size: 22px;
   line-height: 140%;
   color: var(--black-text);
+
+  @include media("<=sm") {
+    font-size: 18px;
+  }
 }
 
 .price {
@@ -63,12 +82,36 @@
   line-height: 140%;
   text-align: center;
   color: var(--black-text);
+
+  @include media("<=sm") {
+    font-size: 15px;
+  }
 }
 
 .removeProduct {
   border: none;
   background: none;
   cursor: pointer;
+}
+
+.placeOrder {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.totalPrice {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: var(--black-text);
+
+  @include media("<=sm") {
+    font-size: 15px;
+  }
 }
 
 .orderButton {

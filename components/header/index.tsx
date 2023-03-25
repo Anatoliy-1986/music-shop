@@ -3,6 +3,7 @@ import { useTypedSelector } from "@/hooks/useTypedSelector";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "../button";
+import { BurgerMenu } from "./component/BurgerMenu";
 import { Cart } from "./component/Cart";
 
 import styles from "./Header.module.scss";
@@ -10,6 +11,7 @@ import { buttonImage, IButtonImage } from "./imageButtonList";
 
 export const Header = () => {
   const [showCart, setShowCart] = useState(false);
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const { homeRef } = useNavigation();
 
   const {
@@ -17,6 +19,8 @@ export const Header = () => {
   } = useTypedSelector((state) => state);
 
   const toggleCart = () => setShowCart(!showCart);
+
+  const toggleBurgerMenu = () => setShowBurgerMenu(!showBurgerMenu);
 
   const headerButton = (name: string) => {
     switch (true) {
@@ -53,11 +57,16 @@ export const Header = () => {
             );
           })}
         </div>
-        <button className={styles.burgerBtn} aria-label="burger menu">
+        <button
+          className={styles.burgerBtn}
+          aria-label="burger menu"
+          onClick={() => toggleBurgerMenu()}
+        >
           <div className={styles.burger} />
         </button>
       </div>
       {showCart && <Cart onClick={toggleCart} products={cart} />}
+      {showBurgerMenu && <BurgerMenu onClick={toggleBurgerMenu} />}
     </header>
   );
 };

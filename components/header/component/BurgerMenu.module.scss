@@ -1,0 +1,52 @@
+@import "/styles/breakpoints";
+
+.burgerMenu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--gray-bg);
+  z-index: 2;
+  animation-duration: 1s;
+  animation-name: showBurger;
+  animation-iteration-count: 1;
+  transform: translateX(0);
+  transition: transform 0.5s linear;
+}
+
+@keyframes showBurger {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.item {
+  margin: 10px 20px;
+  background-color: var(--pink-footer-bg);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.link {
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 20px;
+}

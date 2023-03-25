@@ -18,6 +18,15 @@ export const Cart = ({ onClick, products }: ICart) => {
 
   const { removeItem } = useActions();
 
+  const totalPriceNumber = products.reduce((sum, { price }: IProduct) => {
+    const priceArray = price.split(" ");
+    sum = sum + Number(priceArray[1]);
+    return sum;
+  }, 0);
+
+  // добавляем к общей стоимости символ $
+  const totalPrice = `${products[0]?.price.split(" ")[0]} ${totalPriceNumber}`;
+
   return (
     <div className={styles.root} ref={rootRef}>
       {products.length ? (
@@ -52,9 +61,12 @@ export const Cart = ({ onClick, products }: ICart) => {
               </button>
             </div>
           ))}
-          <button className={styles.orderButton} onClick={onClick}>
-            Place order
-          </button>
+          <div className={styles.placeOrder}>
+            <p className={styles.totalPrice}>Total price: {totalPrice}</p>
+            <button className={styles.orderButton} onClick={onClick}>
+              Place order
+            </button>
+          </div>
         </>
       ) : (
         <h2 className={styles.title}>Cart is Empty</h2>
