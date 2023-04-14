@@ -15,6 +15,7 @@
     --blue-light-bg: #E5F1FF;
     --green-bg: #E6FFFB;
     --green-light-bg: #E5FFFB;
+    --gray-bg: #f2f5f9;
     --border-bottom: rgba(0, 0, 0, 0.1);
 
     --primary-bg: linear-gradient(74.79deg, #ff9292 -7.33%, #de5150 90.21%);
@@ -24,6 +25,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 html,
