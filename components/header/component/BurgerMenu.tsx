@@ -1,7 +1,7 @@
-import { footerLink, IFooterBook } from "@/components/footer/imageButtonList";
+import { MenuListContext, IMenu } from "@/hooks/useMenuList";
 import { useNavLinks } from "@/hooks/useNavLinks";
 import { useOnClickOutside } from "@/hooks/useOnClickOutside";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import styles from "./BurgerMenu.module.scss";
 
 interface IBurgerMenu {
@@ -10,6 +10,7 @@ interface IBurgerMenu {
 
 export const BurgerMenu = ({ onClick }: IBurgerMenu) => {
   const rootRef = useRef(null);
+  const { menu } = useContext(MenuListContext);
 
   useOnClickOutside(rootRef, onClick);
   const { handleNavLinkClick } = useNavLinks();
@@ -23,7 +24,7 @@ export const BurgerMenu = ({ onClick }: IBurgerMenu) => {
     <section className={styles.burgerMenu} ref={rootRef}>
       <nav className={styles.nav}>
         <ul>
-          {footerLink.map(({ id, title, href = "home" }: IFooterBook) => {
+          {menu.map(({ id, title, href = "home" }: IMenu) => {
             return (
               <li key={id} className={styles.item}>
                 <a className={styles.link} onClick={() => handleClick(href)}>

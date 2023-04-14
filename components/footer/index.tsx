@@ -1,18 +1,15 @@
 import Image from "next/image";
 
 import styles from "./Footer.module.scss";
-import {
-  ButtonImage,
-  IButtonImage,
-  IFooterBook,
-  footerLink,
-} from "./imageButtonList";
+import { ButtonImage, IButtonImage, IFooterBook } from "./imageButtonList";
 import { Button } from "../button";
-import { useNavigation } from "@/hooks/useNavigation";
 import { useNavLinks } from "@/hooks/useNavLinks";
+import { useContext } from "react";
+import { MenuListContext } from "@/hooks/useMenuList";
 
 export const Footer = () => {
   const { handleNavLinkClick } = useNavLinks();
+  const { menu } = useContext(MenuListContext);
 
   return (
     <section className={styles.root}>
@@ -25,7 +22,7 @@ export const Footer = () => {
           alt="logo"
         />
         <div className={styles.linkWrapper}>
-          {footerLink.map(({ id, title, href = "home" }: IFooterBook) => {
+          {menu.map(({ id, title, href = "home" }: IFooterBook) => {
             return (
               <a
                 key={id}
