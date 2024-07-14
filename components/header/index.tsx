@@ -13,7 +13,6 @@ export const Header = () => {
   const [showCart, setShowCart] = useState(false);
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const { homeRef } = useNavigation();
-
   const {
     cart: { list: cart },
   } = useTypedSelector((state) => state);
