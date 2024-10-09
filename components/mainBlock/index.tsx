@@ -5,7 +5,7 @@ import styles from "./MainBlock.module.scss";
 
 export const MainBlock = () => {
   return (
-    <section className={styles.root}>
+    <section className={styles.root} id="mainBlock">
       <div className={styles.contentWrapper}>
         <div className={styles.imageWrapper}>
           <Image
