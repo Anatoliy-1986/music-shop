@@ -49,7 +49,7 @@ export const Header = () => {
                 onClick={() => headerButton(alt)}
               >
                 {!!cart.length && alt === "basket" && (
-                  <span className={styles.productsInCart}>{cart.length}</span>
+                  <span aria-label="basket" className={styles.productsInCart}>{cart.length}</span>
                 )}
                 <Image src={src} width={width} height={height} alt={alt} />
               </Button>

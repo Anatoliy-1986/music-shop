@@ -1,5 +1,28 @@
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+
+export const login = (
+    username: string = 'testuser',
+    password: string = '123',
+) => {
+  return cy
+      .request({
+        method: 'POST',
+        url: 'http://localhost:8000/login',
+        body: {
+          username,
+          password,
+        },
+      })
+      .then(({ body }) => {
+        window.localStorage.setItem(
+            "USER_LOCALSTORAGE_KEY",
+            JSON.stringify(body),
+        );
+        return body;
+      });
+};
+
+Cypress.Commands.add('login', login)
 //
 //
 // -- This is a child command --
@@ -16,7 +39,7 @@
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(email: string, password: string): Chainable<void>
+      login(email?: string, password?: string): Chainable<{id: string}>
       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       visit(originalFn: CommandOriginalFn<any>, url: string, options: Partial<VisitOptions>): Chainable<Element>

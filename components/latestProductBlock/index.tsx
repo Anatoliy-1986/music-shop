@@ -22,7 +22,7 @@ export const LatestProductBlock = () => {
       ) : error ? (
         <div>error</div>
       ) : (
-        <div className={styles.cardsWrapper}>
+        <div className={styles.cardsWrapper} aria-label="last products">
           {data?.map((item) => {
             return <ProductItem key={item.id} product={item} />;
           })}

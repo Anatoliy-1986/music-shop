@@ -22,12 +22,12 @@ export const BurgerMenu = ({ onClick }: IBurgerMenu) => {
 
   return (
     <section className={styles.burgerMenu} ref={rootRef}>
-      <nav className={styles.nav}>
+      <nav aria-label="nav menu" className={styles.nav}>
         <ul>
           {menu.map(({ id, title, href = "home" }: IMenu) => {
             return (
               <li key={id} className={styles.item}>
-                <a className={styles.link} onClick={() => handleClick(href)}>
+                <a className={styles.link} aria-label={href} onClick={() => handleClick(href)}>
                   {title}
                 </a>
               </li>
