@@ -33,7 +33,7 @@ export const Cart = ({ onClick, products }: ICart) => {
         <>
           <h2 className={styles.title}>Products in the cart</h2>
           {products.map((item) => (
-            <div key={item.id} className={styles.itemProduct}>
+            <div key={item.id} aria-label={item.name} className={styles.itemProduct}>
               <div className={styles.productWrapper}>
                 <Image
                   className={styles.headphoneImage}

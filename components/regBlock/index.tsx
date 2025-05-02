@@ -61,6 +61,7 @@ export const RegForm = () => {
             Email
             <input
               className={styles.email}
+              aria-label="email"
               type="email"
               placeholder="Enter Your email address"
               name="email"
@@ -79,6 +80,7 @@ export const RegForm = () => {
           <button
             className={styles.regButton}
             type="submit"
+            id="regButton"
             disabled={isEmptyValue.shake}
           >
             Subscribe

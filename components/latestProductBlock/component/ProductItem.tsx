@@ -26,6 +26,7 @@ export const ProductItem: FC<{ product: IProduct }> = ({ product }) => {
       >
         <button
           className={cartButtonClassName}
+          id={color}
           aria-label={isExistsInCart ? "cart is empty" : "product in cart"}
           onClick={() => !isExistsInCart && addItem(product)}
         >
